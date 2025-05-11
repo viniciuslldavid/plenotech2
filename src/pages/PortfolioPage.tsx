@@ -8,6 +8,7 @@ interface ProjectCardProps {
   image: string;
   category: string;
   technologies: string[];
+  url: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -16,9 +17,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   category,
   technologies,
+  url,
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+    >
       <div className="relative h-48 overflow-hidden">
         <img
           src={image}
@@ -45,71 +52,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
 const PortfolioPage: React.FC = () => {
   const projects = [
     {
-      title: "Sistema de Gestão Empresarial",
-      description: "Desenvolvimento de um sistema completo para gestão de recursos e processos empresariais.",
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Ato Energia Website",
+      description: "Site institucional da Ato Energia com informações sobre serviços, projetos e contato.",
+      image: "https://res.cloudinary.com/duzbjndww/image/upload/v1746997704/websiteatoenergia_kvcqjc.png",
       category: "Web",
-      technologies: ["React", "Node.js", "PostgreSQL", "Docker"]
-    },
-    {
-      title: "Aplicativo de Delivery",
-      description: "App mobile para entrega de produtos com rastreamento em tempo real.",
-      image: "https://images.pexels.com/photos/2882634/pexels-photo-2882634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Mobile",
-      technologies: ["React Native", "Firebase", "Google Maps API"]
-    },
-    {
-      title: "E-commerce de Tecnologia",
-      description: "Plataforma de vendas online com integração de pagamentos e gestão de estoque.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Web",
-      technologies: ["Next.js", "Stripe", "MongoDB"]
-    },
-    {
-      title: "Sistema de Monitoramento",
-      description: "Software para monitoramento e manutenção preventiva de equipamentos.",
-      image: "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Manutenção",
-      technologies: ["Python", "React", "TensorFlow"]
-    },
-    {
-      title: "App de Gestão de Tarefas",
-      description: "Aplicativo móvel para gerenciamento de projetos e tarefas em equipe.",
-      image: "https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Mobile",
-      technologies: ["Flutter", "Firebase", "Material Design"]
-    },
-    {
-      title: "Portal Educacional",
-      description: "Plataforma web para cursos online e gestão de conteúdo educacional.",
-      image: "https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Web",
-      technologies: ["Vue.js", "Laravel", "MySQL"]
+      technologies: [
+        "React", 
+        "TypeScript", 
+        "Vite", 
+        "Tailwind CSS", 
+        "React Router",
+      ],
+      url: "https://atoenergia.netlify.app/"
     }
   ];
 
   const categories = [
     {
-      icon: <Globe size={24} />,
-      name: "Web",
-      description: "Aplicações e sistemas web"
+      icon: <Globe size={24} className="text-emerald-600" />, name: "Web", description: "Aplicações e sistemas web"
     },
     {
-      icon: <Smartphone size={24} />,
-      name: "Mobile",
-      description: "Apps para iOS e Android"
+      icon: <Smartphone size={24} className="text-emerald-600" />, name: "Mobile", description: "Apps para iOS e Android"
     },
     {
-      icon: <Monitor size={24} />,
-      name: "Manutenção",
-      description: "Suporte e manutenção"
+      icon: <Monitor size={24} className="text-emerald-600" />, name: "Manutenção", description: "Suporte e manutenção"
     }
   ];
 
@@ -121,7 +94,7 @@ const PortfolioPage: React.FC = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-              Nosso <span className="text-emerald-400">Portfólio</span>
+              Nosso <span className="text-[#88c443]">Portfólio</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 animate-fade-in-delay">
               Conheça alguns dos projetos que desenvolvemos e as soluções que entregamos para nossos clientes
@@ -139,15 +112,14 @@ const PortfolioPage: React.FC = () => {
             subtitle="Desenvolvemos soluções para diferentes necessidades"
             alignment="center"
           />
-          
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {categories.map((category, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white p-8 rounded-lg shadow-md border border-gray-200 transition-all hover:shadow-lg hover:-translate-y-1 animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="inline-block p-3 bg-emerald-100 text-emerald-600 rounded-lg mb-4">
+                <div className="inline-block p-3 bg-emerald-100 rounded-lg mb-4">
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
@@ -166,10 +138,9 @@ const PortfolioPage: React.FC = () => {
             subtitle="Conheça alguns dos nossos casos de sucesso"
             alignment="center"
           />
-          
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div 
+              <div
                 key={index}
                 className="animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}

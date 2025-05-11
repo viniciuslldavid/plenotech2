@@ -7,7 +7,7 @@ const MobilePage: React.FC = () => {
     {
       icon: <Smartphone size={32} className="text-emerald-600" />,
       title: "Apps Nativos",
-      description: "Desenvolvimento de aplicativos nativos para iOS e Android com performance excepcional."
+      description: "Desenvolvimento de aplicativos nativos para Android com performance excepcional."
     },
     {
       icon: <Zap size={32} className="text-emerald-600" />,
@@ -33,7 +33,7 @@ const MobilePage: React.FC = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-              Apps <span className="text-emerald-400">Móveis</span>
+              Apps <span className="text-[#88c443]">Móveis</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 animate-fade-in-delay">
               Transforme sua ideia em um aplicativo móvel de sucesso

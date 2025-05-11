@@ -31,7 +31,7 @@ const ContactForm: React.FC = () => {
           alignment="left"
         />
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -45,7 +45,7 @@ const ContactForm: React.FC = () => {
             required
           />
         </div>
-        
+
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
             E-mail *
@@ -59,7 +59,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
@@ -72,7 +72,7 @@ const ContactForm: React.FC = () => {
             placeholder="(00) 00000-0000"
           />
         </div>
-        
+
         <div>
           <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
             Assunto *
@@ -90,7 +90,7 @@ const ContactForm: React.FC = () => {
           </select>
         </div>
       </div>
-      
+
       <div className="mb-6">
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
           Mensagem *
@@ -103,7 +103,7 @@ const ContactForm: React.FC = () => {
           required
         ></textarea>
       </div>
-      
+
       <div className="flex items-center mb-6">
         <input
           type="checkbox"
@@ -115,7 +115,7 @@ const ContactForm: React.FC = () => {
           Concordo com a <a href="#" className="text-primary-600 hover:underline">Política de Privacidade</a>
         </label>
       </div>
-      
+
       <Button type="submit" variant="primary" size="lg" className="w-full">
         <Send size={18} className="mr-2" />
         Enviar mensagem
@@ -133,7 +133,7 @@ const ContatoPage: React.FC = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-              Entre em <span className="text-secondary-400">Contato</span>
+              Entre em <span className="text-[#88c443]">Contato</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 animate-fade-in-delay">
               Estamos prontos para ajudar você a transformar seu negócio com soluções tecnológicas inovadoras
@@ -152,35 +152,33 @@ const ContatoPage: React.FC = () => {
               title="Endereço"
               content={
                 <>
-                  <p>Av. Paulista, 1000</p>
-                  <p>Bela Vista, São Paulo - SP</p>
-                  <p>CEP: 01310-100</p>
+                  <p>R. Atílio Valentini, 396</p>
+                  <p>Uberlândia, Minas Gerais - MG</p>
+                  <p>CEP: 38408-214</p>
                 </>
               }
             />
-            
+
             <ContactInfoItem
               icon={<Phone size={24} />}
               title="Telefone"
               content={
                 <>
-                  <p>(11) 3000-1000</p>
-                  <p>(11) 98765-4321</p>
+                  <p>(34) 9707-6805</p>
                 </>
               }
             />
-            
+
             <ContactInfoItem
               icon={<Mail size={24} />}
               title="E-mail"
               content={
                 <>
-                  <p>contato@empresa.com</p>
-                  <p>suporte@empresa.com</p>
+                  <p>contato@plenotech.com</p>
                 </>
               }
             />
-            
+
             <ContactInfoItem
               icon={<Clock size={24} />}
               title="Horário de Atendimento"
@@ -192,12 +190,12 @@ const ContatoPage: React.FC = () => {
               }
             />
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="order-2 lg:order-1">
               <ContactForm />
             </div>
-            
+
             <div className="order-1 lg:order-2">
               <div className="bg-white p-8 rounded-lg shadow-lg h-full">
                 <SectionHeading
@@ -205,35 +203,35 @@ const ContatoPage: React.FC = () => {
                   subtitle="Venha nos conhecer pessoalmente"
                   alignment="left"
                 />
-                
+
                 <div className="mt-6 aspect-video rounded-lg overflow-hidden shadow-md">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0995376055273!2d-46.652455!3d-23.5646162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c7f481fd9f%3A0x9982bfde4df54830!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1636129121333!5m2!1spt-BR!2sbr" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy" 
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d322.51951731808856!2d-48.24878408324912!3d-18.913688183251534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a4457822bfdbbf%3A0x36af7456b35561b1!2sR.%20At%C3%ADlio%20Valentini%2C%20396%20-%20Santa%20M%C3%B4nica%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038408-214!5e1!3m2!1spt-BR!2sbr!4v1747005235792!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
                     title="Mapa da localização"
                   ></iframe>
                 </div>
-                
+
                 <div className="mt-8">
                   <h3 className="text-xl font-semibold mb-4">Informações Adicionais</h3>
                   <p className="text-gray-600 mb-4">
-                    Para informações sobre parcerias ou oportunidades de trabalho, entre em contato pelo e-mail: 
-                    <a href="mailto:parcerias@empresa.com" className="text-primary-600 hover:underline ml-1">
-                      parcerias@empresa.com
+                    Para informações sobre parcerias ou oportunidades de trabalho, entre em contato pelo e-mail:
+                    <a href="mailto:contato@plenotech.com" className="text-primary-600 hover:underline ml-1">
+                      contato@plenotech.com
                     </a>
                   </p>
-                  
+
                   <p className="text-gray-600">
                     Se preferir atendimento imediato, você também pode nos chamar pelo WhatsApp:
                   </p>
-                  
-                  <a 
-                    href="https://wa.me/5511987654321" 
-                    target="_blank" 
+
+                  <a
+                    href="https://wa.me/553497076805"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
                   >
@@ -257,7 +255,7 @@ const ContatoPage: React.FC = () => {
             subtitle="Tire suas dúvidas mais comuns sobre nossos serviços"
             alignment="center"
           />
-          
+
           <div className="mt-12 max-w-3xl mx-auto">
             {[
               {
@@ -281,8 +279,8 @@ const ContatoPage: React.FC = () => {
                 answer: "Sim, temos experiência em desenvolver soluções para diversos segmentos, como saúde, educação, comércio, finanças, indústria e muitos outros. Adaptamos nossas soluções às particularidades de cada setor."
               }
             ].map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="mb-6 bg-white rounded-lg shadow-md overflow-hidden animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >

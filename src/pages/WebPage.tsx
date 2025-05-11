@@ -14,16 +14,6 @@ const WebPage: React.FC = () => {
       title: "Sistemas Web",
       description: "Criação de sistemas web personalizados para automatizar e otimizar os processos do seu negócio."
     },
-    {
-      icon: <Smartphone size={32} className="text-emerald-600" />,
-      title: "PWA",
-      description: "Desenvolvimento de Progressive Web Apps que funcionam como aplicativos nativos."
-    },
-    {
-      icon: <Globe size={32} className="text-emerald-600" />,
-      title: "E-commerce",
-      description: "Criação de lojas virtuais completas com integração de pagamentos e gestão de produtos."
-    }
   ];
 
   return (
@@ -33,7 +23,7 @@ const WebPage: React.FC = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-              Desenvolvimento <span className="text-emerald-400">Web</span>
+              Desenvolvimento <span className="text-[#88c443]">Web</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 animate-fade-in-delay">
               Soluções web modernas e personalizadas para impulsionar seu negócio no mundo digital
@@ -116,7 +106,7 @@ const WebPage: React.FC = () => {
             <div className="relative">
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-emerald-100 rounded-3xl"></div>
               <img
-                src="https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg"
+                src="https://res.cloudinary.com/duzbjndww/image/upload/v1747000180/design-responsivo_ih8ve0.png"
                 alt="Desenvolvimento Web"
                 className="rounded-lg shadow-xl relative z-10"
               />

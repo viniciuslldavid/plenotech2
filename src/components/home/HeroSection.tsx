@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Code, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import logoImage from '../../assets/images/logop.png';
 
 const HeroSection: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null); // Referência para o canvas
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -12,9 +13,11 @@ const HeroSection: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Define tamanho do canvas para preencher a tela
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    // Estrutura dos dados das partículas
     const particles: Array<{
       x: number;
       y: number;
@@ -24,8 +27,10 @@ const HeroSection: React.FC = () => {
       color: string;
     }> = [];
 
-    const colors = ['#2E7BFD', '#FF7A10', '#1638B8'];
+    // Cores permitidas para as bolinhas
+    const colors = ['#43c4c0', '#88c443', '#7f43c4'];
 
+    // Criação inicial das partículas
     for (let i = 0; i < 50; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -39,13 +44,17 @@ const HeroSection: React.FC = () => {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      ctx.fillStyle = 'rgba(17, 24, 39, 0.1)';
+
+      // Fundo semi-transparente para gerar efeito de rastro
+      ctx.fillStyle = 'rgba(17, 24, 39, 0.3)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Atualiza posição e desenha cada partícula
       particles.forEach(particle => {
         particle.x += particle.dx;
         particle.y += particle.dy;
 
+        // Inverte direção se atingir a borda
         if (particle.x < 0 || particle.x > canvas.width) particle.dx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.dy *= -1;
 
@@ -58,6 +67,7 @@ const HeroSection: React.FC = () => {
 
     animate();
 
+    // Atualiza tamanho do canvas ao redimensionar a janela
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -69,27 +79,32 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+      {/* Canvas para partículas animadas no fundo */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
       />
-      
+
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="mb-8"
+            className="mb-2" // margem menor aqui
           >
-            <Code size={64} className="text-primary-500 mx-auto" />
+            <img
+              src={logoImage}
+              alt="Descrição da imagem"
+              className="mx-auto w-32 h-30 rounded-full object-cover"
+            />
           </motion.div>
 
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-400"
+            className="text-5xl md:text-7xl font-bold -mt-2 mb-6 bg-clip-text text-transparent bg-[#88c443]"
           >
             Transformando o Futuro Digital
           </motion.h1>
@@ -117,6 +132,7 @@ const HeroSection: React.FC = () => {
                 Iniciar Projeto
                 <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
               </span>
+              {/* Efeito de transição do botão */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </a>
 
@@ -129,6 +145,7 @@ const HeroSection: React.FC = () => {
           </motion.div>
         </div>
 
+        {/* Indicador de scroll (bouncing line) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

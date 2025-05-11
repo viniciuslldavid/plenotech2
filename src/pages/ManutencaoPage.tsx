@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionHeading from '../components/common/SectionHeading';
-import { Monitor, Cpu, HardDrive, WifiOff } from 'lucide-react';
+import { Monitor, Cpu, HardDrive, WifiOff, Wrench } from 'lucide-react';
 
 const ManutencaoPage: React.FC = () => {
   const services = [
@@ -10,19 +10,19 @@ const ManutencaoPage: React.FC = () => {
       description: "Serviços regulares para prevenir problemas e manter seus equipamentos funcionando perfeitamente."
     },
     {
-      icon: <Cpu size={32} className="text-emerald-600" />,
-      title: "Reparo de Hardware",
-      description: "Conserto de componentes, upgrade de peças e otimização de performance."
-    },
-    {
       icon: <HardDrive size={32} className="text-emerald-600" />,
       title: "Backup e Recuperação",
       description: "Backup de dados importantes e recuperação de informações perdidas."
     },
     {
-      icon: <WifiOff size={32} className="text-emerald-600" />,
-      title: "Redes e Conectividade",
-      description: "Configuração e manutenção de redes, Wi-Fi e sistemas de conectividade."
+      icon: <Cpu size={32} className="text-emerald-600" />,
+      title: "Montagem de Computadores",
+      description: "Montagem personalizada de desktops com foco em performance, custo-benefício e necessidade do cliente."
+    },
+    {
+      icon: <Wrench size={32} className="text-emerald-600" />,
+      title: "Manutenção de Computadores e Notebooks",
+      description: "Diagnóstico, troca de peças, limpeza interna e externa, e otimização de sistema."
     }
   ];
 
@@ -33,7 +33,7 @@ const ManutencaoPage: React.FC = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-              Manutenção de <span className="text-emerald-400">TI</span>
+              Manutenção de <span className="text-[#88c443]">TI</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 animate-fade-in-delay">
               Serviços especializados em manutenção e suporte técnico para sua infraestrutura
@@ -116,7 +116,7 @@ const ManutencaoPage: React.FC = () => {
             <div className="relative">
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-emerald-100 rounded-3xl"></div>
               <img
-                src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg"
+                src="https://res.cloudinary.com/duzbjndww/image/upload/v1747000895/o-tecnico-consertando-o-computador-hardware-de-computador-consertando-atualize-e-tecnologia_1_tcs7or.jpg"
                 alt="Manutenção de Computadores"
                 className="rounded-lg shadow-xl relative z-10"
               />
