@@ -1,13 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Componente de cartão individual para cada projeto
 const ProjectCard: React.FC<{
   title: string;
   category: string;
   image: string;
   delay: number;
-  url?: string; // Adiciona a URL de destino (opcional)
+  url?: string;
 }> = ({ title, category, image, delay, url }) => {
   return (
     <motion.article
@@ -17,7 +16,6 @@ const ProjectCard: React.FC<{
       transition={{ duration: 0.6, delay }}
       className="group relative overflow-hidden rounded-2xl shadow-lg bg-gray-800"
     >
-      {/* Torna o card inteiro clicável */}
       <a href={url} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
         <div className="aspect-video overflow-hidden">
           <img
@@ -29,7 +27,6 @@ const ProjectCard: React.FC<{
             className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out"
           />
         </div>
-        {/* Overlay visível no hover com informações do projeto */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <p className="text-sm font-semibold mb-1" style={{ color: '#88c443' }}>
@@ -43,22 +40,19 @@ const ProjectCard: React.FC<{
   );
 };
 
-// Seção principal dos projetos
 const ProjectsSection: React.FC = () => {
-  // Lista de projetos com título, categoria, imagem e link
   const projects = [
     {
       title: 'Web Site Ato Energia',
       category: 'Desenvolvimento Web',
       image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1746997704/websiteatoenergia_kvcqjc.png',
-      url: 'https://atoenergia.netlify.app/' // Link de destino do card
+      url: 'https://atoenergia.netlify.app/'
     }
   ];
 
   return (
     <section className="py-10 bg-gray-900" aria-labelledby="projects-heading">
-      <div className="container mx-auto px-4">
-        {/* Cabeçalho da seção com animação */}
+      <div className="container mx-auto px-4 w-full">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -66,10 +60,7 @@ const ProjectsSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <h2
-            id="projects-heading"
-            className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-[#88c443] to-secondary-400 bg-clip-text text-transparent"
-          >
+          <h2 id="projects-heading" className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-[#88c443] to-secondary-400 bg-clip-text text-transparent">
             Projetos em Destaque
           </h2>
           <p className="text-lg text-gray-400 max-w-xl mx-auto">
@@ -77,8 +68,7 @@ const ProjectsSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Grid responsiva de projetos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
@@ -91,7 +81,6 @@ const ProjectsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Botão para ver todos os projetos */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

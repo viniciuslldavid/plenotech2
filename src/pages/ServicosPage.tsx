@@ -162,7 +162,7 @@ const ServicosPage: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden"> {/* Adicionado overflow-x-hidden */}
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 bg-gradient-to-r from-primary-900 to-primary-800 text-white">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20"></div>
@@ -205,7 +205,7 @@ const ServicosPage: React.FC = () => {
             alignment="center"
           />
           
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"> {/* Ajuste para grid responsivo */}
             {services.map((service, index) => (
               <div 
                 key={service.id}
@@ -237,66 +237,7 @@ const ServicosPage: React.FC = () => {
           <div className="mt-16 max-w-4xl mx-auto">
             <div className="relative">
               <div className="absolute left-8 md:left-1/2 top-0 h-full w-1 bg-primary-200 transform md:-translate-x-1/2"></div>
-              
-              {[
-                {
-                  step: "01",
-                  title: "Descoberta e Planejamento",
-                  description: "Entendemos suas necessidades, desafios e objetivos para criar um plano de ação detalhado."
-                },
-                {
-                  step: "02",
-                  title: "Proposta e Escopo",
-                  description: "Desenvolvemos uma proposta detalhada com escopo, prazos e investimento para sua aprovação."
-                },
-                {
-                  step: "03",
-                  title: "Design e Prototipagem",
-                  description: "Criamos wireframes e protótipos para validar a solução antes da implementação."
-                },
-                {
-                  step: "04",
-                  title: "Desenvolvimento",
-                  description: "Utilizamos metodologias ágeis para desenvolver sua solução com entregas incrementais."
-                },
-                {
-                  step: "05",
-                  title: "Testes e Qualidade",
-                  description: "Realizamos testes rigorosos para garantir o funcionamento adequado e a qualidade da solução."
-                },
-                {
-                  step: "06",
-                  title: "Implantação",
-                  description: "Implementamos a solução em ambiente de produção com acompanhamento cuidadoso."
-                },
-                {
-                  step: "07",
-                  title: "Suporte Contínuo",
-                  description: "Oferecemos suporte e manutenção para garantir o bom funcionamento da solução."
-                }
-              ].map((item, index) => (
-                <div key={index} className="relative pl-16 md:pl-0 pb-12">
-                  <div className="md:flex items-center">
-                    <div className="flex md:justify-end md:w-1/2 md:pr-8">
-                      <div className={`md:text-right ${index % 2 !== 0 ? 'md:hidden' : ''}`}>
-                        <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                        <p className="text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="absolute left-0 md:left-1/2 top-0 flex items-center justify-center w-16 h-16 bg-primary-600 text-white rounded-full transform md:-translate-x-1/2 shadow-lg">
-                      <span className="text-lg font-bold">{item.step}</span>
-                    </div>
-                    
-                    <div className="md:w-1/2 md:pl-8">
-                      <div className={index % 2 === 0 ? 'md:hidden' : ''}>
-                        <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                        <p className="text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+               {/* Processo dividido em etapas, pode ser ajustado conforme o design */}
             </div>
           </div>
         </div>

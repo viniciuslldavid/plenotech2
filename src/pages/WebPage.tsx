@@ -3,6 +3,7 @@ import SectionHeading from '../components/common/SectionHeading';
 import { Code, Layout, Smartphone, Globe } from 'lucide-react';
 
 const WebPage: React.FC = () => {
+  // Lista de serviços oferecidos
   const services = [
     {
       icon: <Layout size={32} className="text-emerald-600" />,
@@ -18,9 +19,10 @@ const WebPage: React.FC = () => {
 
   return (
     <div>
-      <section className="relative pt-40 pb-20 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white">
+      {/* Hero Section com fundo verde */}
+      <section className="relative pt-40 pb-0 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white min-h-screen overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg')] bg-cover bg-center opacity-20"></div>
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
               Desenvolvimento <span className="text-[#88c443]">Web</span>
@@ -33,6 +35,7 @@ const WebPage: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
+      {/* Serviços Web Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <SectionHeading
@@ -59,6 +62,7 @@ const WebPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Benefícios dos Serviços Web Section */}
       <section className="py-20 bg-emerald-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

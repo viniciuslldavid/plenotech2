@@ -126,9 +126,9 @@ const ContactForm: React.FC = () => {
 
 const ContatoPage: React.FC = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden"> {/* Adicionado overflow-x-hidden */}
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 bg-gradient-to-r from-primary-900 to-primary-800 text-white">
+      <section className="relative pt-40 pb-20 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl">

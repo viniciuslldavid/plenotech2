@@ -78,20 +78,19 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-      {/* Canvas para partículas animadas no fundo */}
+    <section className="relative min-h-screen flex items-center justify-center bg-gray-900 w-full overflow-x-hidden"> {/* Ajustei a classe */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
       />
 
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="relative z-10 container mx-auto px-4 w-full">
+        <div className="max-w-4xl mx-auto text-center w-full">
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="mb-2" // margem menor aqui
+            className="mb-2"
           >
             <img
               src={logoImage}
@@ -132,7 +131,6 @@ const HeroSection: React.FC = () => {
                 Iniciar Projeto
                 <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
               </span>
-              {/* Efeito de transição do botão */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </a>
 
@@ -145,7 +143,6 @@ const HeroSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Indicador de scroll (bouncing line) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

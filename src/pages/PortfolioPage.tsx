@@ -87,7 +87,7 @@ const PortfolioPage: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden"> {/* Adicionado overflow-x-hidden */}
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20"></div>
@@ -112,7 +112,7 @@ const PortfolioPage: React.FC = () => {
             subtitle="Desenvolvemos soluções para diferentes necessidades"
             alignment="center"
           />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"> {/* Ajuste para grid responsivo */}
             {categories.map((category, index) => (
               <div
                 key={index}
@@ -138,7 +138,7 @@ const PortfolioPage: React.FC = () => {
             subtitle="Conheça alguns dos nossos casos de sucesso"
             alignment="center"
           />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Ajuste para grid responsivo */}
             {projects.map((project, index) => (
               <div
                 key={index}

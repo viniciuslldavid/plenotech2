@@ -1,115 +1,96 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Globe, Smartphone, Server, Database, LineChart, Shield } from 'lucide-react';
-import SectionHeading from '../common/SectionHeading';
+import { motion } from 'framer-motion';
+import { Wrench, MonitorSmartphone, Globe } from 'lucide-react';
 
-interface ServiceCardProps {
+const ServiceCard: React.FC<{
   icon: React.ReactNode;
   title: string;
   description: string;
-  link: string;
-}
+  delay: number;
+  href: string;
+}> = ({ icon, title, description, delay, href }) => {
+  const handleClick = () => {
+    window.location.href = href;
+  };
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, link }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-      <div className="inline-block p-3 bg-primary-100 text-primary-600 rounded-lg mb-4">
-        {icon}
+    <motion.div
+      onClick={handleClick}
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay }}
+      className="group relative bg-gray-900 p-8 rounded-3xl overflow-hidden cursor-pointer hover:shadow-lg hover:scale-[1.02] transition-transform"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+      <div className="relative z-10">
+        <div className="mb-6 p-4 bg-primary-900/30 rounded-2xl inline-block">
+          {icon}
+        </div>
+        <h3 className="text-2xl font-bold mb-4 text-white leading-relaxed">{title}</h3>
+        <p className="text-gray-400 mb-4">{description}</p>
+
+        <span className="text-primary-400 font-semibold hover:underline">
+          Ver serviço →
+        </span>
       </div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <Link 
-        to={link}
-        className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
-      >
-        Saiba mais
-        <svg 
-          className="ml-2 w-4 h-4" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24" 
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth="2" 
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
-      </Link>
-    </div>
+
+      <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-br from-primary-500/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform" />
+    </motion.div>
   );
 };
 
 const ServicesSection: React.FC = () => {
   const services = [
     {
-      icon: <Globe size={24} />,
-      title: "Desenvolvimento Web",
-      description: "Criamos sites e aplicações web responsivas, modernas e otimizadas para conversão de leads.",
-      link: "/servicos#web"
+      icon: <Wrench className="w-8 h-8 text-primary-400" />,
+      title: 'Manutenção de Computadores',
+      description: 'Serviços técnicos de diagnóstico, reparo e otimização de computadores e notebooks.',
+      href: '/manutencao',
     },
     {
-      icon: <Smartphone size={24} />,
-      title: "Aplicativos Móveis",
-      description: "Desenvolvemos apps nativos e multiplataforma para iOS e Android com experiências intuitivas.",
-      link: "/servicos#mobile"
+      icon: <Globe className="w-8 h-8 text-primary-400" />,
+      title: 'Desenvolvimento Web',
+      description: 'Criação de sites modernos, responsivos e otimizados para SEO.',
+      href: '/web',
     },
     {
-      icon: <Server size={24} />,
-      title: "Cloud Computing",
-      description: "Oferecemos soluções em nuvem para escalabilidade, flexibilidade e redução de custos de infraestrutura.",
-      link: "/servicos#cloud"
+      icon: <MonitorSmartphone className="w-8 h-8 text-primary-400" />,
+      title: 'Desenvolvimento de Aplicativos',
+      description: 'Apps personalizados para Android e iOS com foco em desempenho e usabilidade.',
+      href: '/mobile',
     },
-    {
-      icon: <Database size={24} />,
-      title: "Banco de Dados",
-      description: "Projetamos e otimizamos estruturas de banco de dados para alto desempenho e segurança.",
-      link: "/servicos#database"
-    },
-    {
-      icon: <LineChart size={24} />,
-      title: "Business Intelligence",
-      description: "Transformamos dados em insights acionáveis para tomada de decisões estratégicas.",
-      link: "/servicos#bi"
-    },
-    {
-      icon: <Shield size={24} />,
-      title: "Cibersegurança",
-      description: "Protegemos seus sistemas, dados e usuários contra ameaças digitais e vulnerabilidades.",
-      link: "/servicos#security"
-    }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <SectionHeading
-          title="Nossos Serviços"
-          subtitle="Soluções tecnológicas para impulsionar seu negócio"
-          alignment="center"
-        />
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {services.map((service, index) => (
+    <section className="py-20 bg-gray-900">
+      <div className="container mx-auto px-4 w-full">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-relaxed" style={{ color: '#88c443' }}>
+            Soluções em Tecnologia para o seu Negócio
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Oferecemos serviços profissionais em manutenção de computadores, desenvolvimento de sites e aplicativos, além de soluções digitais personalizadas.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {services.map((item, index) => (
             <ServiceCard
               key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              link={service.link}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              delay={index * 0.2}
+              href={item.href}
             />
           ))}
-        </div>
-        
-        <div className="mt-16 text-center">
-          <Link
-            to="/servicos"
-            className="inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
-          >
-            Ver Todos os Serviços
-          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,3 @@
-// src/pages/SobrePage.tsx
-// Página “Sobre” da Pleno Tech, com seções: Hero, Nossa História, Missão/Visão/Valores, Trajetória, Equipe e CTA.
-
 import React from 'react';
 import { Award, Users, Target } from 'lucide-react';
 import SectionHeading from '../components/common/SectionHeading';
@@ -52,7 +49,7 @@ const SobrePage: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden"> {/* Para evitar qualquer transbordamento */}
       {/* Hero Section com fundo verde */}
       <section className="relative pt-40 pb-20 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6476806/pexels-photo-6476806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20"></div>

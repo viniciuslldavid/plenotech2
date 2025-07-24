@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionHeading from '../components/common/SectionHeading';
-import { Monitor, Cpu, HardDrive, WifiOff, Wrench } from 'lucide-react';
+import { Monitor, Cpu, HardDrive, Wrench } from 'lucide-react';
 
 const ManutencaoPage: React.FC = () => {
   const services = [
@@ -27,7 +27,7 @@ const ManutencaoPage: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden"> {/* Adicionado overflow-x-hidden */}
       <section className="relative pt-40 pb-20 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 relative">
@@ -51,7 +51,7 @@ const ManutencaoPage: React.FC = () => {
             alignment="center"
           />
           
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Ajuste para grid responsivo */}
             {services.map((service, index) => (
               <div 
                 key={index}

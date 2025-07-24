@@ -6,7 +6,7 @@ import {
   Facebook, Instagram, Linkedin,
   ArrowRight
 } from 'lucide-react';
-import Logo from '../common/Logo'; // Componente da logo
+import Logo from '../common/Logo';
 
 const Footer: React.FC = () => {
   // Configuração para animações
@@ -38,28 +38,15 @@ const Footer: React.FC = () => {
                 Transformando ideias em soluções tecnológicas inovadoras para impulsionar seu negócio para o futuro.
               </p>
 
-              {/* Redes sociais (apenas Facebook, Instagram e Linkedin) */}
+              {/* Redes sociais */}
               <div className="mt-8 flex space-x-4">
-                <a
-                  href="https://www.facebook.com/plenotech?mibextid=ZbWKwL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#88c443] transition-colors"
-                >
+                <a href="https://www.facebook.com/plenotech?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#88c443] transition-colors">
                   <Facebook size={20} />
                 </a>
-                <a
-                  href="https://www.instagram.com/pleno.tech?igsh=ZmZjMjNzODJ1dmhs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#88c443] transition-colors"
-                >
+                <a href="https://www.instagram.com/pleno.tech?igsh=ZmZjMjNzODJ1dmhs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#88c443] transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#88c443] transition-colors"
-                >
+                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#88c443] transition-colors">
                   <Linkedin size={20} />
                 </a>
               </div>
@@ -69,61 +56,59 @@ const Footer: React.FC = () => {
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <h3 className="text-lg font-semibold mb-6">Navegação</h3>
               <ul className="space-y-4">
-                {['Início', 'Sobre Nós', 'Serviços', 'Portfolio', 'Contato'].map((item) => (
-                  <li key={item}>
-                    <Link
-                      to={`/${item.toLowerCase().replace(' ', '-')}`}
-                      className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group"
-                    >
-                      <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link to="/" className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group">
+                    <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Início
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/sobre" className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group">
+                    <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Sobre Nós
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/portfolio" className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group">
+                    <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Portfolio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contato" className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group">
+                    <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Contato
+                  </Link>
+                </li>
               </ul>
             </motion.div>
 
-            {/* Coluna: Soluções */}
+            {/* Coluna: Soluções (permanece igual) */}
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
               <h3 className="text-lg font-semibold mb-6">Soluções</h3>
               <ul className="space-y-4">
-                {/* Link para Desenvolvimento Web */}
                 <li>
-                  <Link
-                    to="/web"
-                    className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group"
-                  >
+                  <Link to="/web" className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group">
                     <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     Desenvolvimento Web
                   </Link>
                 </li>
-
-                {/* Link para Desenvolvimento de Aplicativos */}
                 <li>
-                  <Link
-                    to="/mobile"
-                    className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group"
-                  >
+                  <Link to="/mobile" className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group">
                     <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     Desenvolvimento de Aplicativos
                   </Link>
                 </li>
-
-                {/* Link para Manutenção de Computadores */}
                 <li>
-                  <Link
-                    to="/manutencao"
-                    className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group"
-                  >
+                  <Link to="/manutencao" className="text-gray-400 hover:text-[#88c443] transition-colors flex items-center group">
                     <ArrowRight size={16} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     Manutenção de Computadores
                   </Link>
                 </li>
               </ul>
-
             </motion.div>
 
-            {/* Coluna: Contato */}
+            {/* Coluna: Contato (permanece igual) */}
             <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
               <h3 className="text-lg font-semibold mb-6">Contato</h3>
               <ul className="space-y-4">
@@ -142,7 +127,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li className="flex items-center">
                   <Mail className="mr-3 h-5 w-5 text-[#88c443] flex-shrink-0" />
-                  <a href="mailto:contato@empresa.com" className="text-gray-400 hover:text-[#88c443] transition-colors">
+                  <a href="mailto:contato@plenotech.com" className="text-gray-400 hover:text-[#88c443] transition-colors">
                     contato@plenotech.com
                   </a>
                 </li>
@@ -157,7 +142,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} EmpresaTech. Todos os direitos reservados.
+              © {new Date().getFullYear()} PlenoTech. Todos os direitos reservados.
             </p>
           </div>
         </div>
