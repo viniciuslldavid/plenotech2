@@ -45,7 +45,7 @@ const ServicesSection: React.FC = () => {
   const services = [
     {
       icon: <Wrench className="w-8 h-8 text-primary-400" />,
-      title: 'Manutenção de Computadores',
+      title: 'Manutenção e Montagem de PCs e Notebooks: Escritório e Gamer',
       description: 'Serviços técnicos de diagnóstico, reparo e otimização de computadores e notebooks.',
       href: '/manutencao',
     },

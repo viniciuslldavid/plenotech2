@@ -103,7 +103,16 @@ const HeroSection: React.FC = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold -mt-2 mb-6 bg-clip-text text-transparent bg-[#88c443]"
+            className="text-5xl md:text-7xl font-bold -mt-2 mb-6 text-transparent"
+            style={{
+              background: 'linear-gradient(to right, #88c443, #43c4c0)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block',
+              padding: '0 1rem',
+              lineHeight: '1.2',
+              fontFamily: "'Poppins', sans-serif",
+            }}
           >
             Transformando o Futuro Digital
           </motion.h1>
@@ -128,7 +137,7 @@ const HeroSection: React.FC = () => {
               className="group relative px-8 py-4 bg-primary-600 text-white rounded-full overflow-hidden"
             >
               <span className="relative z-10 flex items-center justify-center">
-                Iniciar Projeto
+                Solicite Seu Orçamento Agora
                 <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
