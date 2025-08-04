@@ -164,7 +164,7 @@ const ContatoPage: React.FC = () => {
               title="Telefone"
               content={
                 <>
-                  <p>(34) 9707-6805</p>
+                  <p>(034) 99707-6805</p>
                 </>
               }
             />
@@ -206,7 +206,7 @@ const ContatoPage: React.FC = () => {
 
                 <div className="mt-6 aspect-video rounded-lg overflow-hidden shadow-md">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d322.51951731808856!2d-48.24878408324912!3d-18.913688183251534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a4457822bfdbbf%3A0x36af7456b35561b1!2sR.%20At%C3%ADlio%20Valentini%2C%20396%20-%20Santa%20M%C3%B4nica%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038408-214!5e1!3m2!1spt-BR!2sbr!4v1747005235792!5m2!1spt-BR!2sbr"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.4009832287597!2d-48.248759899999996!3d-18.9136374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a445152a77f99f%3A0x7af73dd109860035!2sPlenoTech!5e0!3m2!1spt-BR!2sbr!4v1754271528203!5m2!1spt-BR!2sbr"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -230,7 +230,7 @@ const ContatoPage: React.FC = () => {
                   </p>
 
                   <a
-                    href="https://wa.me/553497076805"
+                    href="https://wa.me/553497076805?text=Ol%C3%A1!%20Estou%20precisando%20de%20ajuda%20com%20meu%20computador/notebook.%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20diagn%C3%B3stico%20gratuito%20e%20como%20posso%20resolver%20o%20problema%20do%20meu%20equipamento.%20Agrade%C3%A7o%20desde%20j%C3%A1!"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"

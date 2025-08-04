@@ -1,71 +1,235 @@
 import React from 'react';
-import SectionHeading from '../common/SectionHeading';
-import TestimonialCard from '../common/TestimonialCard';
+import { motion } from 'framer-motion';
+import { Star, Quote, User, MapPin } from 'lucide-react';
+
+const TestimonialCard: React.FC<{
+  name: string;
+  location: string;
+  rating: number;
+  comment: string;
+  service: string;
+  delay: number;
+  highlight?: boolean;
+}> = ({ name, location, rating, comment, service, delay, highlight }) => {
+  return (
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay }}
+      className={`group relative p-8 rounded-3xl overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-transform ${
+        highlight ? 'bg-gradient-to-br from-[#88c443]/10 to-gray-800 border-2 border-[#88c443]/30' : 'bg-gray-800'
+      }`}
+    >
+      {highlight && (
+        <div className="absolute top-4 right-4 bg-[#88c443] text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
+          Destaque
+        </div>
+      )}
+      
+      <div className="absolute inset-0 bg-gradient-to-br from-[#88c443]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      
+      <div className="relative z-10">
+        {/* Quote Icon */}
+        <Quote className="w-8 h-8 text-[#88c443] mb-4" />
+        
+        {/* Rating */}
+        <div className="flex items-center mb-4">
+          {[...Array(5)].map((_, i) => (
+            <Star
+              key={i}
+              className={`w-5 h-5 ${
+                i < rating ? 'text-[#88c443] fill-current' : 'text-gray-600'
+              }`}
+            />
+          ))}
+        </div>
+        
+        {/* Comment */}
+        <p className="text-gray-300 mb-6 leading-relaxed text-lg">
+          "{comment}"
+        </p>
+        
+        {/* Service Tag */}
+        <div className="mb-4">
+          <span className="inline-block px-3 py-1 bg-[#88c443]/20 text-[#88c443] rounded-full text-sm font-medium">
+            {service}
+          </span>
+        </div>
+        
+        {/* Customer Info */}
+        <div className="flex items-center">
+          <div className="p-3 bg-[#88c443]/20 rounded-full mr-4">
+            <User className="w-6 h-6 text-[#88c443]" />
+          </div>
+          <div>
+            <h4 className="text-white font-semibold">{name}</h4>
+            <div className="flex items-center text-gray-400 text-sm">
+              <MapPin className="w-4 h-4 mr-1" />
+              {location}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-br from-[#88c443]/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform" />
+    </motion.div>
+  );
+};
+
+const StatsCard: React.FC<{
+  number: string;
+  label: string;
+  delay: number;
+}> = ({ number, label, delay }) => {
+  return (
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay }}
+      className="text-center p-6 bg-gray-800 rounded-2xl hover:bg-gray-700 transition-colors"
+    >
+      <div
+        className="text-4xl md:text-5xl font-bold mb-2"
+        style={{ color: '#88c443' }}
+      >
+        {number}
+      </div>
+      <p className="text-gray-400 font-medium">{label}</p>
+    </motion.div>
+  );
+};
 
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      content: "A parceria com a EmpresaTech foi transformadora para nosso negócio. Eles desenvolveram uma solução personalizada que aumentou nossa produtividade em 40%.",
-      author: "Carlos Silva",
-      role: "CEO",
-      company: "TechnoSoft",
+      name: 'Elizer',
+      location: 'Perdizes, MG',
       rating: 5,
-      imageUrl: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      comment: 'Excelente atendimento! Meu notebook estava muito lento e eles conseguiram deixar como novo. O técnico veio na minha casa e resolveu tudo no mesmo dia. Super recomendo!',
+      service: 'Montagem PC Gamer',
+      highlight: true,
     },
     {
-      content: "Impressionante como eles entenderam nossas necessidades e entregaram um produto que superou nossas expectativas. O suporte pós-venda também é excelente.",
-      author: "Mariana Santos",
-      role: "Diretora de Marketing",
-      company: "InnovateX",
+      name: 'Josed',
+      location: 'Rio Pardo de Minas, MG',
       rating: 5,
-      imageUrl: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      comment: 'Precisava de um site para minha empresa e o resultado superou minhas expectativas. Profissionais competentes e preço justo. Muito satisfeita com o trabalho!',
+      service: 'Montagem PC Gamer',
     },
     {
-      content: "Desde que implementamos o sistema desenvolvido pela EmpresaTech, conseguimos reduzir custos e melhorar significativamente a experiência dos nossos clientes.",
-      author: "Ricardo Oliveira",
-      role: "CTO",
-      company: "DataFlex",
-      rating: 4,
-      imageUrl: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    }
+      name: 'Roberto Oliveira',
+      location: 'Carmo de Minas, MG',
+      rating: 5,
+      comment: 'Meu PC gamer estava com problemas na placa de vídeo. O diagnóstico foi gratuito e rápido. Fizeram a troca da peça e ainda otimizaram todo o sistema. Nota 10!',
+      service: 'Montagem PC Gamer',
+    },
+    {
+      name: 'Maria Fernanda',
+      location: 'Três Corações, MG',
+      rating: 5,
+      comment: 'Atendimento muito profissional. Desenvolveram um aplicativo personalizado para meu negócio. Entregaram no prazo e com qualidade excepcional.',
+      service: 'Desenvolvimento de App',
+    },
+    {
+      name: 'João Pereira',
+      location: 'São Lourenço, MG',
+      rating: 5,
+      comment: 'Serviço de higienização do meu notebook foi impecável. Estava fazendo muito barulho e esquentando demais. Agora está funcionando perfeitamente e muito mais silencioso.',
+      service: 'Higienização',
+    },
+    {
+      name: 'Luciana Costa',
+      location: 'Caxambu, MG',
+      rating: 5,
+      comment: 'Montaram meu PC do zero com as peças que eu escolhi. Explicaram tudo detalhadamente e o resultado ficou excelente. Preço muito competitivo!',
+      service: 'Montagem de PC',
+    },
+  ];
+
+  const stats = [
+    { number: '500+', label: 'Clientes Atendidos' },
+    { number: '98%', label: 'Satisfação' },
+    { number: '24h', label: 'Tempo Médio de Resposta' },
+    { number: '5★', label: 'Avaliação Média' },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
-        <SectionHeading
-          title="O que nossos clientes dizem"
-          subtitle="Veja como temos ajudado empresas a alcançar seus objetivos com soluções tecnológicas personalizadas"
-          alignment="center"
-        />
-        
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <TestimonialCard
-                content={testimonial.content}
-                author={testimonial.author}
-                role={testimonial.role}
-                company={testimonial.company}
-                rating={testimonial.rating}
-                imageUrl={testimonial.imageUrl}
-              />
-            </div>
+        {/* Título Principal */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-6 leading-relaxed"
+            style={{ color: '#88c443' }}
+          >
+            O Que Nossos Clientes Dizem
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            A satisfação de nossos clientes é nossa maior recompensa. Veja alguns depoimentos de quem já confiou em nossos serviços.
+          </p>
+        </motion.div>
+
+        {/* Estatísticas */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {stats.map((stat, index) => (
+            <StatsCard
+              key={index}
+              number={stat.number}
+              label={stat.label}
+              delay={index * 0.1}
+            />
           ))}
         </div>
-        
-        <div className="mt-12 text-center">
-          <a 
-            href="/contato"
-            className="inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
-          >
-            Seja o próximo caso de sucesso
-          </a>
+
+        {/* Grid de Depoimentos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard
+              key={index}
+              name={testimonial.name}
+              location={testimonial.location}
+              rating={testimonial.rating}
+              comment={testimonial.comment}
+              service={testimonial.service}
+              delay={index * 0.1}
+              highlight={testimonial.highlight}
+            />
+          ))}
         </div>
+
+        {/* Seção de Convite para Avaliar */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-[#88c443]/10 to-gray-800 p-8 rounded-3xl border border-[#88c443]/20 text-center"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Você também pode fazer parte dessa história!
+          </h3>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Junte-se aos nossos clientes satisfeitos e experimente nossos serviços técnicos de qualidade. 
+            Diagnóstico gratuito e soluções personalizadas para suas necessidades.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/553497076805?text=Ol%C3%A1!%20Vi%20os%20depoimentos%20no%20site%20e%20gostaria%20de%20conhecer%20os%20servi%C3%A7os%20da%20PlenoTech."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-[#88c443] to-[#76ad3a] text-white font-medium rounded-full hover:from-[#76ad3a] hover:to-[#88c443] transition-all shadow-lg hover:shadow-xl"
+            >
+              Solicitar Atendimento
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

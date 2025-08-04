@@ -8,7 +8,8 @@ import WebPage from './pages/WebPage';
 import MobilePage from './pages/MobilePage';
 import ManutencaoPage from './pages/ManutencaoPage';
 import PortfolioPage from './pages/PortfolioPage';
-import ContatoPage from './pages/ContatoPage';
+import ContatoPage from './pages/ContatoPage'; 
+import ThankYouPage from './pages/ThankYouPage';
 import ScrollToTop from './components/layout/ScrollToTop';
 
 /**
@@ -33,7 +34,8 @@ function App(): JSX.Element {
             <Route path="/mobile" element={<MobilePage />} />
             <Route path="/manutencao" element={<ManutencaoPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/contato" element={<ContatoPage />} />
+            <Route path="/contato" element={<ContatoPage />} /> 
+            <Route path="/obrigado" element={<ThankYouPage />} /> 
           </Routes>
         </main>
 

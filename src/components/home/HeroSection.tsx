@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
               fontFamily: "'Poppins', sans-serif",
             }}
           >
-            Transformando o Futuro Digital
+            Soluções Rápidas para Seu Equipamento
           </motion.h1>
 
           <motion.p
@@ -123,7 +123,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-300 mb-12"
           >
-            Criamos experiências digitais únicas que transcendem as expectativas
+            Oferecemos diagnóstico gratuito para identificar o problema do seu equipamento. Não deixe de aproveitar essa oportunidade de começar a solução sem compromisso.
           </motion.p>
 
           <motion.div
@@ -133,8 +133,10 @@ const HeroSection: React.FC = () => {
             className="flex flex-col md:flex-row gap-6 justify-center"
           >
             <a
-              href="/contato"
+              href="https://wa.me/553497076805?text=Ol%C3%A1!%20Estou%20precisando%20de%20ajuda%20com%20meu%20computador/notebook.%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20diagn%C3%B3stico%20gratuito%20e%20como%20posso%20resolver%20o%20problema%20do%20meu%20equipamento.%20Agrade%C3%A7o%20desde%20j%C3%A1!"
               className="group relative px-8 py-4 bg-primary-600 text-white rounded-full overflow-hidden"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span className="relative z-10 flex items-center justify-center">
                 Solicite Seu Orçamento Agora
