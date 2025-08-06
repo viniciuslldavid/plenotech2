@@ -78,7 +78,7 @@ const PaymentMethodsSection: React.FC = () => {
     {
       icon: <CreditCard className="w-6 h-6 text-[#88c443]" />,
       title: 'Cartão de Crédito',
-      description: 'Parcelamos em até 12x sem juros',
+      description: 'Parcelamos em até 12x',
     },
     {
       icon: <CreditCard className="w-6 h-6 text-[#88c443]" />,
@@ -196,7 +196,7 @@ const PaymentMethodsSection: React.FC = () => {
             <div>
               <h5 className="font-semibold text-white mb-2">💳 Parcelamento</h5>
               <p className="text-sm">
-                Cartões de crédito: até 12x sem juros para serviços acima de R$ 200,00
+                Cartões de crédito: até 12x para serviços acima de R$ 300,00
               </p>
             </div>
             <div>

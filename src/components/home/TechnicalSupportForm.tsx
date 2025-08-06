@@ -31,7 +31,7 @@ const TechnicalSupportForm: React.FC = () => {
     { id: 'O computador está lento', label: 'O computador está lento', icon: <Wrench className="w-6 h-6" /> },
     { id: 'Montagem de computador', label: 'Montagem de computador', icon: <Settings className="w-6 h-6" /> },
     { id: 'Higienização do PC ou notebook', label: 'Higienização do PC ou notebook', icon: <Sparkles className="w-6 h-6" /> },
-    { id: 'Outro problema (descreva abaixo)', label: 'Outro problema (descreva abaixo)', icon: <MessageCircle className="w-6 h-6" /> }
+    { id: 'Outro problema (descreva abaixo)', label: 'Outro problema', icon: <MessageCircle className="w-6 h-6" /> }
   ];
 
   const handleProblemSelect = (problemId: string) => {
